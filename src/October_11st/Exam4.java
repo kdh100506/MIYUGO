@@ -7,7 +7,7 @@ public class Exam4 {
 
         while (now <= number) {
             int temp = now;
-            int count = 0; // 3, 6, 9가 나온 횟수
+            int count = 0;
 
             while (temp > 0) {
                 int digit = temp % 10;
