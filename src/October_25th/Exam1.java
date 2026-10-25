@@ -1,6 +1,6 @@
 package October_25th;
 
-public class Main {
+public class Exam1 {
     public static double average(int kor, int eng, int math) {
         return (kor + eng + math) / 3;
     }
