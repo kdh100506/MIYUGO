@@ -14,4 +14,21 @@
 //   심화    명예의 전당: 높은 순으로 정렬된 기록 3개에 새 기록을 알맞은 자리에 끼워 넣기
 public class Casino {
 
+    static boolean validBet(int chips, int bet) {
+        return bet > 0 && bet <= chips;
+    }
+
+    static int judgeHighLow(Card current, Card next, String guess) {
+        if (next.score() == current.score()) return 0;
+        boolean higher = next.score() > current.score();
+        if (guess.equals("H") && higher) return 1;
+        if (guess.equals("L") && !higher) return 1;
+        return -1;
+    }
+
+    static int settle(int chips, int bet, int result) {
+        if (result > 0) return chips + bet;
+        if (result < 0) return chips - bet;
+        return chips;
+    }
 }

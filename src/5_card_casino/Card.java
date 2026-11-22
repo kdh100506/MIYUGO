@@ -12,5 +12,34 @@
 //   public String toString()   예: ♥KING  (HEARTS ♥, DIAMONDS ◆, SPADES ♠, CLUBS ♣)
 //                              이 메서드가 있으면 System.out.println(card) 만으로 예쁘게 찍혀요
 public class Card {
+    String value;
+    String suit;
 
+    Card(String value, String suit) {
+        this.value = value;
+        this.suit = suit;
+    }
+
+    int score() {
+        switch (value) {
+            case "ACE":   return 14;
+            case "KING":  return 13;
+            case "QUEEN": return 12;
+            case "JACK":  return 11;
+            default:      return Integer.parseInt(value);
+        }
+    }
+
+    @Override
+    public String toString() {
+        String symbol;
+        switch (suit) {
+            case "HEARTS":   symbol = "♥"; break;
+            case "DIAMONDS": symbol = "◆"; break;
+            case "SPADES":   symbol = "♠"; break;
+            case "CLUBS":    symbol = "♣"; break;
+            default:         symbol = "?";
+        }
+        return symbol + value;
+    }
 }
